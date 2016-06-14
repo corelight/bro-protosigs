@@ -22,7 +22,20 @@ Write you own signatures
 ------------------------
 
 1. Create a file named `my-protosigs.sig` in your `site` directory.
-2. Add your own signatures to `my-protosigs.sig`.  You can look at the examples shipped with this module and/or refer to `Bro's signature documentation <https://www.bro.org/sphinx/frameworks/signatures.html>`__.
+
+2. Add your own signatures to `my-protosigs.sig`.  You can look at the 
+   examples shipped with this module and/or refer to `Bro's signature 
+   documentation <https://www.bro.org/sphinx/frameworks/signatures.html>`__.
+   There are two small notes to keep in mind when writing your own
+   signatures.
+
+  * You **must** name your signature that does the final match prefixed
+    with "\protosig_".
+
+  * You **must** add the `eval ProtoSig::match` condition into your
+    signature that does the final match.  That call is what ties the
+    signature match into the protosigs Bro scripts.
+
 3. Load the `my-protosigs.sig` file in local.bro after loading this module like this::
 
     @load bro-protosigs
