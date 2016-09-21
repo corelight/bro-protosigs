@@ -18,7 +18,7 @@ Protocols Detected by this Module
 * RTMP
 * Gnutella
 
-Write you own signatures
+Write your own signatures
 ------------------------
 
 1. Create a file named `my-protosigs.sig` in your `site` directory.
